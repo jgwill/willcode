@@ -17,6 +17,6 @@ echo "Updating git submodules"
 git submodule update --init --recursive
 
 echo "Installing npm dependencies"
-npm install
+  npm install || echo "npm install encountered issues"
 
 echo "Setup complete. Run ./JGWILL_BUILD.sh to build"
