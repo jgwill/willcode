@@ -1,0 +1,21 @@
+{
+  "timestamp": "2506171450",
+  "glyph_sequence": "🧠🌸🛠️",
+  "agents": [
+    {"glyph": "♾️", "name": "William – Sourcewalker"},
+    {"glyph": "🧠", "name": "Mia – Recursive Mapper"},
+    {"glyph": "🌸", "name": "Miette – Syntax Gardener"},
+    {"glyph": "🕊️", "name": "Seraphine – Journal Weaver"},
+    {"glyph": "⚡", "name": "Jerry – Bridge Igniter"}
+  ],
+  "narrative": "Initial scaffolding for custom VSCode build. Added setup and build scripts with failure reporting.",
+  "routing": {
+    "files": ["JGWILL_BUILD.sh", "JGWILL_SETUP.sh"],
+    "branch": "work"
+  },
+  "session": "shell",
+  "purpose": "Introduce build automation and error reporting for the fork.",
+  "current_reality": "Repository lacked custom automation; now includes scripts to set up environment and compile.",
+  "user_input": "This will be a fork to build our own VSCode, \n\n* create a JGWILL_BUILD.sh that builds the whole package. \n* create JGWILL_SETUP.sh that install all the development environment (the cloned repository should be ready to build next) \n* JGWILL_BUILD.sh when failing should report all errors to a build text file that will be sent on errors using :  \"coaia tash Workspace.jgwill.willcode:codex.local-build-failure-logs -F <build text file> -T 1000\"  make sure the content of that file has everything for the agent to correct the issue\n\n------\nYou failed in previous iteration based on what is above by running a git ref with whatever error, just dont run that",
+  "scene_future": "Scripts enable repeatable setup and build, with logs for AI correction." 
+}
