@@ -6,9 +6,9 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
-header="// Type definitions for Visual Studio Code ${1}
-// Project: https://github.com/microsoft/vscode
-// Definitions by: Visual Studio Code Team, Microsoft <https://github.com/microsoft>
+header="// Type definitions for WillCode ${1}
+// Project: https://github.com/jgwill/willcode
+// Definitions by: WillCode Team <https://code.jgwill.com>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 /*---------------------------------------------------------------------------------------------
@@ -18,9 +18,9 @@ header="// Type definitions for Visual Studio Code ${1}
  *--------------------------------------------------------------------------------------------*/
 
 /**
- * Type Definition for Visual Studio Code ${1} Extension API
- * See https://code.visualstudio.com/api for more information
- */"
+ * Type Definition for WillCode ${1} Extension API
+ * See https://code.jgwill.com/api for more information
+*/"
 
 if [ -f ./src/vscode-dts/vscode.d.ts ]; then
 	echo "$header" > index.d.ts
