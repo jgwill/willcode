@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Setup script for JGWill VSCode fork
+# Installs Node using nvm and installs dependencies
+set -e
+
+NODE_VERSION="$(cat .nvmrc)"
+if ! command -v nvm >/dev/null 2>&1; then
+  echo "nvm not found. Installing nvm..."
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  # shellcheck source=/dev/null
+  source "$HOME/.nvm/nvm.sh"
+fi
+nvm install "$NODE_VERSION"
+nvm use "$NODE_VERSION"
+
+echo "Updating git submodules"
+git submodule update --init --recursive
+
+echo "Installing npm dependencies"
+npm install
+
+echo "Setup complete. Run ./JGWILL_BUILD.sh to build"
