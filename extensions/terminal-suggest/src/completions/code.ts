@@ -773,7 +773,7 @@ export const codeTunnelSubcommands = [
 	},
 	{
 		name: 'serve-web',
-		description: 'Runs a local web version of Code - OSS',
+               description: 'Runs a local web version of WillCode',
 		options: [
 			{
 				name: '--host',
@@ -938,7 +938,7 @@ export const codeTunnelSubcommands = [
 			},
 			{
 				name: 'serve-web',
-				description: 'Runs a local web version of Code - OSS',
+               description: 'Runs a local web version of WillCode',
 			},
 			{
 				name: 'command-shell',
