@@ -3,6 +3,10 @@
 # Installs Node using nvm and installs dependencies
 set -e
 
+echo "Installing build dependencies"
+sudo apt-get update -y >/dev/null
+sudo apt-get install -y libkrb5-dev libxkbfile-dev >/dev/null
+
 NODE_VERSION="$(cat .nvmrc)"
 if ! command -v nvm >/dev/null 2>&1; then
   echo "nvm not found. Installing nvm..."

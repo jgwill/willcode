@@ -7,12 +7,20 @@ LOG_FILE="build.log"
 # Ensure dependencies are installed
 if [ ! -d node_modules ]; then
   echo "node_modules missing, running npm install..." | tee "$LOG_FILE"
-  npm install >>"$LOG_FILE" 2>&1
+  npm install --omit=optional >>"$LOG_FILE" 2>&1
+fi
+
+# Ensure gulp is available
+if [ ! -f node_modules/gulp/bin/gulp.js ]; then
+  echo "gulp not found locally, using npx" | tee -a "$LOG_FILE"
+  GULP_CMD="npx --yes gulp"
+else
+  GULP_CMD="node ./node_modules/gulp/bin/gulp.js"
 fi
 
 {
   echo "Starting build $(date)"
-  npm run compile
+  $GULP_CMD compile
 } 2>&1 | tee "$LOG_FILE"
 
 BUILD_STATUS=${PIPESTATUS[0]}
